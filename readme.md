@@ -64,6 +64,12 @@
 
 `git rm filename`
 
+if you use `rm <filname>` command you will be required to `git add .` for changes to reflect (the above command does all that in one step)
+
+`git rm --cached <filename>`
+
+used to remove a file from git but keep it in your local repository may be used with `-f` to force delete
+
 `git add filename` //run any of these commands after the file was deleted from the working directory
 
 ###### Remove unstaged changes in tracked files
@@ -103,6 +109,70 @@ here the commits are reset to the specified commitId but both the staged and  un
 ###### Branches
 
 `git branch -D branchname` //delete a branch
+
+###### git stash
+
+used to save uncommited worked when you want to switch between branchs instead of committing unincomplete work'
+
+`git stash`
+
+Stash changes with message
+
+`git stash save <Stashing Message>`
+
+To check all the stored stashes
+
+`git stash list`
+
+To reaply changes that were stashed
+
+`git stash apply`
+
+if you have many stashes you can apply a specific stash by using the command
+
+`git stash apply <stash id>`
+
+Show Stash changes
+
+`git stash show`
+
+this command shows all the changes made to the files
+
+`git stash show -p`
+
+Command to display all the changes in the stashed change
+
+Stash pop this will remove the latest stash and apply the changes to the current branch its like git stash apply but it deletes the poped statsh from the queue
+
+`git stash pop`
+
+Git stash drop used to remove the latest stash from the queue
+
+`git stash drop or git stash drop <stashid>`
+
+Git stash clear used to remove all the available stashes at once
+
+`git stash clear`
+
+###### Git Reflog
+
+used to bring back deleted commits or branches
+
+`git reflog`
+
+if a branch is deleted check the actual commit has of the deleted branch using the above command then checkout to the specific commitId which will create a detached head then create a new branch with the name of the deleted branch
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
