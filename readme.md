@@ -9,7 +9,7 @@ Check working directory & staging area status
 Display all commits of the current branch
 `git log`
 Display all files in the statging area
-`git ls-files`
+`git ls-files`\
 
 # Commit Creation and Access
 
