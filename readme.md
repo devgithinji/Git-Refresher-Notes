@@ -236,6 +236,16 @@ Git Checkout Tags
 
 `git checkout <tagname>` //create a detached head
 
+###### Delete Git branch
+
+`git branch -D <branch name>` //delete a local branch
+
+`git --delete --remotes origin/<branch name>`  //delete remote tracking branch
+
+`git push orgin --delete <branch name>` //delete a remote branch
+
+
+
 
 
 
