@@ -162,6 +162,80 @@ used to bring back deleted commits or branches
 
 if a branch is deleted check the actual commit has of the deleted branch using the above command then checkout to the specific commitId which will create a detached head then create a new branch with the name of the deleted branch
 
+##### Git merge
+
+Git merge types are divided into:
+
+Fast forward and Non Fast-forward (Recursive, Octopus, Ours, Subtree)
+
+Fast forward merge is a merge that works if no additional commit was added in master after feature branch was created its just moves the HEAD forward but does not create a new commit
+
+###### Git Squash
+
+Keyword used to combine many commits of a feature branch to the master as a single commit while merging with the master branch
+
+`git merge --squash feature`
+
+then
+
+`git commit -m"name of new commit"`
+
+In Recursive merge a merge commit is added used when the master branch and feature branch have additional commits after the faeture branch was created
+
+`git merge -no-ff feature`
+
+###### Git Rebase
+
+When to apply Git rebase:
+
+1: when you have new commits in the master while working in the feature branch
+
+2: when your feature  relies on additional commits in the master branch
+
+Rebase re-writes code history so not safe to use in remote repos
+
+###### Cherry Pick
+
+Cherry pick used for applying some commit from one feature branch to master branch if you made a mistake and commited a file in the wrong branch but you dont want merge the whole branch
+
+`git cherry-pick <commitId>`
+
+###### Git Tags
+
+Tags are used to make a point as a specific point in git history. They are used to mark a commit stage as relevant
+
+Types of tags involve 1: anotated tag 2: Light weight tag which are both similar but diffrent in the case of the amount of metadata stores
+
+Annotated Tags are tags that store extra Metadata like developer name, email, date and more `git tag <tagname> -m"tag message"`
+
+Lightweight tag `git tag <tagname>`
+
+We create a tag when
+1: we want to create a release point for stable version of your code
+2: we want to create a historical point that you can refer to reuse in feature
+
+`git tag <tag name> <commitId>` if you don't provide the commitId the default branch commit will be tagged
+
+`git tag` to list all the availabe tags in our repository
+
+`git tag show <tagname>` to show details of a particular tag
+
+Git push tags
+
+`git push origin <tagname>` //pushing  a single tag
+
+`git push orgin --tags or git push --tags` //pushing all available tags at once
+
+Delete a tag
+
+`git tag -d <tagname>` delete one tag `git tag -d <tag1> <tag2>` //delete multiple tags
+
+`git push origin -d <tagname>`  //delete a specified tag from the remote server `git push origin -d <tagname> <tagname2>` //delete multiple remote tags
+
+Git Checkout Tags
+
+`git checkout <tagname>` //create a detached head
+
 
 
 
